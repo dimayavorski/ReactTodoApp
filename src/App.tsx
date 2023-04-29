@@ -16,7 +16,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React DIMA
+          Learn React DIMA 1
         </a>
       </header>
     </div>
