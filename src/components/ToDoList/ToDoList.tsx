@@ -1,7 +1,6 @@
 import styles from "./ToDoList.module.scss";
 import { ToDoItem } from "../ToDoItem/ToDoItem";
 import { ITodoItem } from "../../models/ITodoItem";
-import { useAppSelector } from "../../hooks/useAppSelector";
 import { useEffect, useState } from "react";
 import { useTodos } from "../../hooks/useTodos";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
@@ -11,7 +10,7 @@ import { useLocalStorage } from "../../hooks/useLocalStorage";
 export function ToDoList() {
 
     const { getAll, getCompleted, getIncomplete, setToDos } = useTodos();
-    const { saveData, getData } = useLocalStorage()
+    const { getData } = useLocalStorage()
 
     useEffect(() => {
         let initData = getData();
@@ -30,7 +29,7 @@ export function ToDoList() {
                     <span onClick={() => getIncomplete()}>Active</span>
                     <span onClick={() => getCompleted()}>Completed</span>
                 </li>
-                <a>Clear Completed</a>
+                <span>Clear Completed</span>
             </ul>
         </div>
     )

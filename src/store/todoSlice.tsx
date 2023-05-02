@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit"
 import { ITodoItem } from "../models/ITodoItem"
-import { RootState } from "./store";
 
 
 

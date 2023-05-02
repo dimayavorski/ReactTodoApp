@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useAppSelector } from "./useAppSelector";
 import { ITodoItem } from "../models/ITodoItem";
 import { useAppDispatch } from "./useAppDispatch";
