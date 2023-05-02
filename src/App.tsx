@@ -13,9 +13,10 @@ function App() {
   const [isActive, setIsActive] = useState<boolean>(false);
   const {addTodo} = useTodos();
   const {initDatabase} = useLocalStorage();
-  useEffect(() => {
-    initDatabase()
-  })
+
+  useEffect(( ) => {initDatabase()}, [initDatabase])
+ 
+ 
 
 
   const toggleCheckbox = (value: boolean) => {

@@ -19,7 +19,8 @@ export function useLocalStorage() {
     }
 
     function getData(): ITodoItem[] {
-        let data = localStorage.getItem(key);
+        const data = localStorage.getItem(key);
+
         if (data) {
             let todosInitial: ITodoItem[] = JSON.parse(data);
             return todosInitial;

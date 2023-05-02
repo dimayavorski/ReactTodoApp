@@ -13,9 +13,10 @@ export function ToDoList() {
     const { getData } = useLocalStorage()
 
     useEffect(() => {
-        let initData = getData();
+        const initData = getData();
         setToDos(initData);
-    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     return (
         <div className={styles.toDoList}>
@@ -26,7 +27,7 @@ export function ToDoList() {
                 <li>{getAll().filter(todo => !todo.checked).length} items left</li>
                 <li className={styles.filter}>
                     <span onClick={() => getAll()}>All</span>
-                    <span onClick={() => getIncomplete()}>Active</span>
+                    <span onClick={() => getIncomplete}>Active</span>
                     <span onClick={() => getCompleted()}>Completed</span>
                 </li>
                 <span>Clear Completed</span>
