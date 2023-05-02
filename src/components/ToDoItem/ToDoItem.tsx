@@ -1,6 +1,6 @@
 import { ITodoItem } from "../../models/ITodoItem";
 import styles from "./ToDoItem.module.scss"
-import { FC, useState } from "react";
+import { FC } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import { Checkbox } from "../checkbox/Checkbox";
 import { useTodos } from "../../hooks/useTodos";

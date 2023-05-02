@@ -15,7 +15,7 @@ function App() {
   const {initDatabase} = useLocalStorage();
   useEffect(() => {
     initDatabase()
-  }, [])
+  })
 
 
   const toggleCheckbox = (value: boolean) => {

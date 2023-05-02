@@ -1,7 +1,7 @@
 import styles from "./ToDoList.module.scss";
 import { ToDoItem } from "../ToDoItem/ToDoItem";
 import { ITodoItem } from "../../models/ITodoItem";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useTodos } from "../../hooks/useTodos";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
 
@@ -15,7 +15,7 @@ export function ToDoList() {
     useEffect(() => {
         let initData = getData();
         setToDos(initData);
-    }, []);
+    });
 
     return (
         <div className={styles.toDoList}>
