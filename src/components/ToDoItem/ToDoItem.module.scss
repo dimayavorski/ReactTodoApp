@@ -1,0 +1,10 @@
+.toDoItem {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: white;
+    padding: 5px;
+    gap: 15px;
+    border-bottom: 1px solid gray;
+}
+    

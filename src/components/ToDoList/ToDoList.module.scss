@@ -1,0 +1,24 @@
+.toDoList {
+    margin-top: 40px;
+    background-color: white;
+    border-radius: 10px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+
+    .content {
+        padding: 0;
+        height: 600px;
+        overflow: auto;
+    }
+
+    .actionsList {
+        padding: 0 15px 10px 15px;
+        display: flex;
+        justify-content: space-between;
+
+        .filter {
+            display: flex;
+            gap: 8px;
+        }
+    }
+}
