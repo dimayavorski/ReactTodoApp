@@ -3,8 +3,19 @@
     flex-direction: row;
     justify-content: space-between;
     background-color: white;
-    padding: 5px;
+    padding: 5px 15px 5px 15px;
     gap: 15px;
     border-bottom: 1px solid gray;
+
+    .toDoItemInfo {
+        display: flex;
+
+    }
+
+    .removeBtn {
+        border: none;
+        background: none;
+        cursor:pointer;
+    }
 }
     

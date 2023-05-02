@@ -2,24 +2,31 @@
 import { AiOutlinePlus } from 'react-icons/ai'
 import styles from "./App.module.scss";
 import { ToDoList } from './components/ToDoList/ToDoList';
-import { useState } from 'react';
-import { addToDo } from "./store/todoSlice"
-import { useAppDispatch } from './hooks/useAppDispatch';
+import { useEffect, useState } from 'react';
+import { Checkbox } from './components/checkbox/Checkbox';
+import { useLocalStorage } from './hooks/useLocalStorage';
+import { useTodos } from './hooks/useTodos';
 
 
 function App() {
   const [text, setText] = useState("");
-  const [active, setActive] = useState<boolean>(false);
-  const dispatch = useAppDispatch();
+  const [isActive, setIsActive] = useState<boolean>(false);
+  const {addTodo} = useTodos();
+  const {initDatabase} = useLocalStorage();
+  useEffect(() => {
+    initDatabase()
+  }, [initDatabase])
 
-  const addTask = () => dispatch(addToDo({text, active}))
 
+  const toggleCheckbox = (value: boolean) => {
+    setIsActive(value)
+  } 
   const submitHandler = (event: React.FormEvent) => {
     event.preventDefault();
-    if(text.trim().length > 0) {
-      addTask();
+    if (text.trim().length > 0) {
       setText('');
-      setActive(false);
+      setIsActive(false);
+      addTodo(text, isActive);
     }
   }
 
@@ -28,10 +35,10 @@ function App() {
       <h3 className={styles.title}>TODO App</h3>
       <form onSubmit={submitHandler}>
         <div className={styles.inputContainer}>
-          <input type="checkbox" checked={active} onChange={e => {setActive(e.target.checked)}} />
-          <input type="text" className={styles.input} placeholder="Add todo" 
-           value={text} onChange={(e) => {setText(e.target.value)}}/>
-          <button><AiOutlinePlus /></button>
+          <Checkbox isActive={isActive} toggleCheckboxHandler={toggleCheckbox}/>
+          <input type="text" className={styles.input} placeholder="Add todo"
+            value={text} onChange={(e) => setText(e.target.value) } />
+          <button className={styles.addTodo}><AiOutlinePlus size={30} /></button>
         </div>
       </form>
       <ToDoList />
