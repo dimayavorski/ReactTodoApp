@@ -1,29 +1,29 @@
 .toDoList {
-    margin-top: 40px;
-    background-color: white;
-    border-radius: 10px;
-    padding-top: 1px;
-    padding-bottom: 1px;
+	margin-top: 40px;
+	background-color: white;
+	border-radius: 10px;
+	padding-top: 1px;
+	padding-bottom: 1px;
 
-    .content {
-        padding: 0;
-        height: 600px;
-        overflow: auto;
-    }
+	.content {
+		padding: 0;
+		height: 400px;
+		overflow: auto;
+	}
 
-    .actionsList {
-        margin: 0;
-        padding: 0 15px 10px 15px;
-        display: flex;
-        justify-content: space-between;
-        list-style-type: none;
-        .filter {
-            display: flex;
-            gap: 15px;
-        }
+	.actionsList {
+		margin: 0;
+		padding: 0 15px 10px 15px;
+		display: flex;
+		justify-content: space-between;
+		list-style-type: none;
+		.filter {
+			display: flex;
+			gap: 15px;
+		}
 
-        li {
-            cursor: pointer;
-        }
-    }
+		li {
+			cursor: pointer;
+		}
+	}
 }
