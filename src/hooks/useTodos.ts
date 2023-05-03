@@ -1,58 +1,75 @@
-import { useAppSelector } from "./useAppSelector";
-import { ITodoItem } from "../models/ITodoItem";
-import { useAppDispatch } from "./useAppDispatch";
-import { addToDo, addToDos, removeToDo } from "../store/todoSlice";
-import { useLocalStorage } from "./useLocalStorage";
+import { ITodoItem } from '../models/ITodoItem';
+import { useAppDispatch } from './useAppDispatch';
+import { addToDo, removeToDo, updateToDos } from '../store/todoSlice';
+import { useLocalStorage } from './useToDoRepository';
 
 export function useTodos() {
-    
-    const todos: ITodoItem[] = useAppSelector(state => state.todos.todos);
-    const {saveData, getData} = useLocalStorage()
-    const dispatch = useAppDispatch()
+	const {
+		saveData,
+		getData,
+		getCompletedData,
+		getIncompleteData,
+		toggleTodo,
+		removeCompleted,
+	} = useLocalStorage();
+	const dispatch = useAppDispatch();
 
-    function getAll() {
-        return todos;
-    }
+	function set(todos: ITodoItem[]) {
+		dispatch(updateToDos(todos));
+	}
 
-    function getCompleted() {
+	function getAll() {
+		const todos = getData();
+		set(todos);
+	}
 
-    }
+	function filterCompleted() {
+		const todos = getCompletedData();
+		set(todos);
+	}
 
-    function getIncomplete() {
-        // todos.filter(todo => !todo.checked)
-    }
+	function filterIncomplete() {
+		const todos = getIncompleteData();
+		set(todos);
+	}
 
-    function addTodo(text: string, isActive: boolean) {
-        let data = getData();
-        const todo = {
-            id: new Date().toISOString(),
-            text: text,
-            checked: isActive
-        }
-        data.push(todo);
-        saveData(data);
-        dispatch(addToDo({ todo: todo }))
-    }
+	function add(text: string, isActive: boolean) {
+		const data = getData();
+		const todo = {
+			id: new Date().toISOString(),
+			text,
+			checked: isActive,
+		};
+		data.push(todo);
+		saveData(data);
+		dispatch(addToDo(todo));
+	}
 
-    function setToDos(todos: ITodoItem[]) {
-        dispatch(addToDos({ todos }))
-    }
+	function toggleComplete(todo: ITodoItem) {
+		const todos = toggleTodo(todo);
+		set(todos);
+	}
 
-    function removeTodo(todo: ITodoItem) {
-        let data = getData();
-        data = data.filter(item => item.id !== todo.id)
-        saveData(data);
-        dispatch(removeToDo(todo))
-    }
+	function remove(todo: ITodoItem) {
+		let data = getData();
+		data = data.filter((item) => item.id !== todo.id);
+		saveData(data);
+		dispatch(removeToDo(todo));
+	}
 
-  
+	function clearCompleted() {
+		const data = removeCompleted();
+		set(data);
+	}
 
-    
-
-    // useEffect(() => {
-    //     let data = getData();
-    //     setTodos(data);
-    // })
-
-    return { getAll, getCompleted, getIncomplete, setToDos, addTodo, removeTodo }
+	return {
+		getAll,
+		clearCompleted,
+		filterCompleted,
+		filterIncomplete,
+		set,
+		add,
+		remove,
+		toggleComplete,
+	};
 }

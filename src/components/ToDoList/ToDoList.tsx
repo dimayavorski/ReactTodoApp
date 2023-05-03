@@ -1,37 +1,41 @@
-import styles from "./ToDoList.module.scss";
-import { ToDoItem } from "../ToDoItem/ToDoItem";
-import { ITodoItem } from "../../models/ITodoItem";
-import { useEffect } from "react";
-import { useTodos } from "../../hooks/useTodos";
-import { useLocalStorage } from "../../hooks/useLocalStorage";
-
-
+import styles from './ToDoList.module.scss';
+import { ToDoItem } from '../ToDoItem/ToDoItem';
+import { ITodoItem } from '../../models/ITodoItem';
+import { useEffect } from 'react';
+import { useTodos } from '../../hooks/useTodos';
+import { useLocalStorage } from '../../hooks/useToDoRepository';
+import { useAppSelector } from '../../hooks/useAppSelector';
 
 export function ToDoList() {
+	const todos: ITodoItem[] = useAppSelector((state) => state.todos.todos);
+	const { getAll, filterCompleted, filterIncomplete, set, clearCompleted } =
+		useTodos();
+	const { getData } = useLocalStorage();
 
-    const { getAll, getCompleted, getIncomplete, setToDos } = useTodos();
-    const { getData } = useLocalStorage()
+	useEffect(() => {
+		const initData = getData();
+		set(initData);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
 
-    useEffect(() => {
-        const initData = getData();
-        setToDos(initData);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
-
-    return (
-        <div className={styles.toDoList}>
-            <ul className={styles.content}>
-                {getAll().map((todo: ITodoItem) => <ToDoItem key={todo.id} todoItem={todo} />)}
-            </ul>
-            <ul className={styles.actionsList}>
-                <li>{getAll().filter(todo => !todo.checked).length} items left</li>
-                <li className={styles.filter}>
-                    <span onClick={() => getAll()}>All</span>
-                    <span onClick={() => getIncomplete}>Active</span>
-                    <span onClick={() => getCompleted()}>Completed</span>
-                </li>
-                <span>Clear Completed</span>
-            </ul>
-        </div>
-    )
+	return (
+		<div className={styles.toDoList}>
+			<ul className={styles.content}>
+				{todos.map((todo: ITodoItem) => (
+					<ToDoItem key={todo.id} todoItem={todo} />
+				))}
+			</ul>
+			<ul className={styles.actionsList}>
+				<li>{todos.filter((todo) => !todo.checked).length} items left</li>
+				<li className={styles.filter}>
+					<span onClick={() => getAll()}>All</span>
+					<span onClick={() => filterIncomplete()}>Active</span>
+					<span onClick={() => filterCompleted()}>Completed</span>
+				</li>
+				<li>
+					<span onClick={() => clearCompleted()}>Clear Completed</span>
+				</li>
+			</ul>
+		</div>
+	);
 }
