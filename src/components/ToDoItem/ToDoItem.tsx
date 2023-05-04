@@ -11,11 +11,7 @@ interface TodoItemProps {
 
 export const ToDoItem: FC<TodoItemProps> = ({ todoItem }) => {
 	const { remove, toggleComplete } = useTodos();
-	if (!todoItem) {
-		return null;
-	}
 
-	const removeItem = (todo: ITodoItem) => remove(todo);
 	return (
 		<li className={styles.toDoItem}>
 			<div className={styles.toDoItemInfo}>
@@ -25,7 +21,7 @@ export const ToDoItem: FC<TodoItemProps> = ({ todoItem }) => {
 				/>
 				<p>{todoItem.text}</p>
 			</div>
-			<button className={styles.removeBtn} onClick={() => removeItem(todoItem)}>
+			<button className={styles.removeBtn} onClick={() => remove(todoItem)}>
 				<AiOutlineClose size={20} />
 			</button>
 		</li>
