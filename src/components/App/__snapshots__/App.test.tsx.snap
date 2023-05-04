@@ -1,0 +1,238 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App tests should match snapshot 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="app"
+      >
+        <h3
+          class="title"
+        >
+          TODO App
+        </h3>
+        <form>
+          <div
+            class="inputContainer"
+          >
+            <div
+              class="checkBoxContainer"
+            >
+              <label>
+                <input
+                  type="checkbox"
+                />
+                <span />
+              </label>
+            </div>
+            <input
+              class="input"
+              placeholder="Add todo"
+              type="text"
+              value=""
+            />
+            <button
+              class="addTodo"
+            >
+              <svg
+                fill="currentColor"
+                height="30"
+                stroke="currentColor"
+                stroke-width="0"
+                t="1551322312294"
+                version="1.1"
+                viewBox="0 0 1024 1024"
+                width="30"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <defs />
+                <path
+                  d="M474 152m8 0l60 0q8 0 8 8l0 704q0 8-8 8l-60 0q-8 0-8-8l0-704q0-8 8-8Z"
+                />
+                <path
+                  d="M168 474m8 0l672 0q8 0 8 8l0 60q0 8-8 8l-672 0q-8 0-8-8l0-60q0-8 8-8Z"
+                />
+              </svg>
+            </button>
+          </div>
+        </form>
+        <div
+          class="toDoList"
+        >
+          <ul
+            class="content"
+          />
+          <ul
+            class="actionsList"
+          >
+            <li>
+              0
+               items left
+            </li>
+            <li
+              class="filter"
+            >
+              <span>
+                All
+              </span>
+              <span>
+                Active
+              </span>
+              <span>
+                Completed
+              </span>
+            </li>
+            <li>
+              <span>
+                Clear Completed
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="app"
+    >
+      <h3
+        class="title"
+      >
+        TODO App
+      </h3>
+      <form>
+        <div
+          class="inputContainer"
+        >
+          <div
+            class="checkBoxContainer"
+          >
+            <label>
+              <input
+                type="checkbox"
+              />
+              <span />
+            </label>
+          </div>
+          <input
+            class="input"
+            placeholder="Add todo"
+            type="text"
+            value=""
+          />
+          <button
+            class="addTodo"
+          >
+            <svg
+              fill="currentColor"
+              height="30"
+              stroke="currentColor"
+              stroke-width="0"
+              t="1551322312294"
+              version="1.1"
+              viewBox="0 0 1024 1024"
+              width="30"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <defs />
+              <path
+                d="M474 152m8 0l60 0q8 0 8 8l0 704q0 8-8 8l-60 0q-8 0-8-8l0-704q0-8 8-8Z"
+              />
+              <path
+                d="M168 474m8 0l672 0q8 0 8 8l0 60q0 8-8 8l-672 0q-8 0-8-8l0-60q0-8 8-8Z"
+              />
+            </svg>
+          </button>
+        </div>
+      </form>
+      <div
+        class="toDoList"
+      >
+        <ul
+          class="content"
+        />
+        <ul
+          class="actionsList"
+        >
+          <li>
+            0
+             items left
+          </li>
+          <li
+            class="filter"
+          >
+            <span>
+              All
+            </span>
+            <span>
+              Active
+            </span>
+            <span>
+              Completed
+            </span>
+          </li>
+          <li>
+            <span>
+              Clear Completed
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
