@@ -30,7 +30,7 @@ function App() {
 
 	return (
 		<div className={styles.app}>
-			<h3 className={styles.title}>TODO App1</h3>
+			<h3 className={styles.title}>TODO App</h3>
 			<form onSubmit={submitHandler}>
 				<div className={styles.inputContainer}>
 					<Checkbox
