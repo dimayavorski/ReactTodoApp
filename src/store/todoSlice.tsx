@@ -21,13 +21,13 @@ const todoSlice = createSlice({
 			);
 			if (toggleTodo) toggleTodo.checked = !toggleTodo.checked;
 		},
-		//removeCompletedToDos(state, action) {},
 		updateToDos(state, action: PayloadAction<ITodoItem[]>) {
 			state.todos = action.payload;
 		},
 	},
 });
 
-export const { updateToDos, addToDo, removeToDo } = todoSlice.actions;
+export const { updateToDos, addToDo, removeToDo, toggleToDoComplete } =
+	todoSlice.actions;
 //export const selectCount = (state: RootState) => state.counter.value
 export default todoSlice.reducer;
