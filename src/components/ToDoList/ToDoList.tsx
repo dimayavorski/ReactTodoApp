@@ -1,13 +1,15 @@
 import styles from './ToDoList.module.scss';
 import { ToDoItem } from '../ToDoItem/ToDoItem';
 import { ITodoItem } from '../../models/ITodoItem';
-import { useEffect } from 'react';
+import { BaseSyntheticEvent, useEffect, useRef } from 'react';
 import { useTodos } from '../../hooks/useTodos';
 import { useToDoRepository } from '../../hooks/useToDoRepository';
 import { useAppSelector } from '../../hooks/useAppSelector';
+import { Reorder } from 'framer-motion';
 
 export function ToDoList() {
 	const todos: ITodoItem[] = useAppSelector((state) => state.todos.todos);
+
 	const { getAll, filterCompleted, filterIncomplete, set, clearCompleted } =
 		useTodos();
 	const { getData } = useToDoRepository();
@@ -20,11 +22,23 @@ export function ToDoList() {
 
 	return (
 		<div className={styles.toDoList}>
-			<ul className={styles.content}>
-				{todos.map((todo: ITodoItem) => (
-					<ToDoItem key={todo.id} todoItem={todo} />
-				))}
-			</ul>
+			<div className={styles.content}>
+				<Reorder.Group
+					axis="y"
+					values={todos}
+					onReorder={set}
+					style={{
+						overflowY: 'auto',
+						height: '100%',
+						listStyleType: 'none',
+						paddingLeft: '0',
+					}}
+				>
+					{todos.map((todo: ITodoItem) => (
+						<ToDoItem key={todo.id} todoItem={todo} />
+					))}
+				</Reorder.Group>
+			</div>
 			<ul className={styles.actionsList}>
 				<li>{todos.filter((todo) => !todo.checked).length} items left</li>
 				<li className={styles.filter}>

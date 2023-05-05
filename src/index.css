@@ -1,9 +1,8 @@
 body {
-  margin: 0;
-  font-family: 'Montserrat', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: aqua;
+	margin: 0;
+	font-family: 'Montserrat', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background: linear-gradient(45deg, rgb(124, 207, 255), rgb(0, 255, 200));
+	height: 100vh;
 }
-
-

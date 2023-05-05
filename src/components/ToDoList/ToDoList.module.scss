@@ -8,12 +8,15 @@
 	.content {
 		padding: 0;
 		height: 400px;
-		overflow: auto;
+
+		.draggable {
+			cursor: pointer;
+		}
 	}
 
 	.actionsList {
 		margin: 0;
-		padding: 0 15px 10px 15px;
+		padding: 20px 15px 10px 15px;
 		display: flex;
 		justify-content: space-between;
 		list-style-type: none;
