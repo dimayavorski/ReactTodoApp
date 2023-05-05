@@ -32,6 +32,7 @@ export function ToDoList() {
 						height: '100%',
 						listStyleType: 'none',
 						paddingLeft: '0',
+						cursor: 'pointer',
 					}}
 				>
 					{todos.map((todo: ITodoItem) => (
