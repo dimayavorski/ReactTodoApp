@@ -1,6 +1,6 @@
 import { ITodoItem } from '../models/ITodoItem';
 
-export function useLocalStorage() {
+export function useToDoRepository() {
 	const key = 'todos';
 
 	const todosMock: ITodoItem[] = [

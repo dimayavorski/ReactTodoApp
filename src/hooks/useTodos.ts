@@ -1,7 +1,7 @@
 import { ITodoItem } from '../models/ITodoItem';
 import { useAppDispatch } from './useAppDispatch';
 import { addToDo, removeToDo, updateToDos } from '../store/todoSlice';
-import { useLocalStorage } from './useToDoRepository';
+import { useToDoRepository } from './useToDoRepository';
 
 export function useTodos() {
 	const {
@@ -11,7 +11,7 @@ export function useTodos() {
 		getIncompleteData,
 		toggleTodo,
 		removeCompleted,
-	} = useLocalStorage();
+	} = useToDoRepository();
 	const dispatch = useAppDispatch();
 
 	function set(todos: ITodoItem[]) {

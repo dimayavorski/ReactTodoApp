@@ -3,14 +3,14 @@ import { ToDoItem } from '../ToDoItem/ToDoItem';
 import { ITodoItem } from '../../models/ITodoItem';
 import { useEffect } from 'react';
 import { useTodos } from '../../hooks/useTodos';
-import { useLocalStorage } from '../../hooks/useToDoRepository';
+import { useToDoRepository } from '../../hooks/useToDoRepository';
 import { useAppSelector } from '../../hooks/useAppSelector';
 
 export function ToDoList() {
 	const todos: ITodoItem[] = useAppSelector((state) => state.todos.todos);
 	const { getAll, filterCompleted, filterIncomplete, set, clearCompleted } =
 		useTodos();
-	const { getData } = useLocalStorage();
+	const { getData } = useToDoRepository();
 
 	useEffect(() => {
 		const initData = getData();

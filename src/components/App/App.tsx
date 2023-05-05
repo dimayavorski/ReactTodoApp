@@ -2,7 +2,7 @@ import { AiOutlinePlus } from 'react-icons/ai';
 import styles from './App.module.scss';
 import { ToDoList } from '../ToDoList/ToDoList';
 import { useEffect, useState } from 'react';
-import { useLocalStorage } from '../../hooks/useToDoRepository';
+import { useToDoRepository } from '../../hooks/useToDoRepository';
 import { useTodos } from '../../hooks/useTodos';
 import { Checkbox } from '../Checkbox/Checkbox';
 
@@ -10,7 +10,7 @@ function App() {
 	const [text, setText] = useState('');
 	const [isActive, setIsActive] = useState<boolean>(false);
 	const { add } = useTodos();
-	const { initDatabase } = useLocalStorage();
+	const { initDatabase } = useToDoRepository();
 
 	useEffect(() => {
 		initDatabase();

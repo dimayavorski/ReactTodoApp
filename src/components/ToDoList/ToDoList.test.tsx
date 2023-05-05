@@ -9,7 +9,7 @@ import {
 import { Provider } from 'react-redux';
 import { store } from '../../store/store';
 import { ToDoList } from './ToDoList';
-import { useLocalStorage } from '../../hooks/useToDoRepository';
+import { useToDoRepository } from '../../hooks/useToDoRepository';
 
 const mockItems: ITodoItem[] = [
 	{
@@ -28,8 +28,9 @@ const mockItems: ITodoItem[] = [
 		checked: false,
 	},
 ];
+
 describe('ToDoList tests', () => {
-	const { saveData } = useLocalStorage();
+	const { saveData } = useToDoRepository();
 	let component: RenderResult;
 
 	saveData(mockItems);
