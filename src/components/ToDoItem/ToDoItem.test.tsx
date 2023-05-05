@@ -8,6 +8,7 @@ import {
 import { ToDoItem } from './ToDoItem';
 import { Provider } from 'react-redux';
 import { store } from '../../store/store';
+import { Reorder } from 'framer-motion';
 
 const mockItem: ITodoItem = {
 	id: 'asdasd',
@@ -16,12 +17,14 @@ const mockItem: ITodoItem = {
 };
 
 let component: RenderResult;
-
 describe('ToDoItem tests', () => {
+	const reorder = jest.fn();
 	beforeEach(() => {
 		component = render(
 			<Provider store={store}>
-				<ToDoItem todoItem={mockItem} />
+				<Reorder.Group values={[mockItem]} onReorder={reorder}>
+					<ToDoItem todoItem={mockItem} />
+				</Reorder.Group>
 			</Provider>
 		);
 	});

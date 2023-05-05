@@ -61,9 +61,13 @@ Object {
         <div
           class="toDoList"
         >
-          <ul
+          <div
             class="content"
-          />
+          >
+            <ul
+              style="overflow-y: auto; height: 100%; list-style-type: none; padding-left: 0px; cursor: pointer;"
+            />
+          </div>
           <ul
             class="actionsList"
           >
@@ -151,9 +155,13 @@ Object {
       <div
         class="toDoList"
       >
-        <ul
+        <div
           class="content"
-        />
+        >
+          <ul
+            style="overflow-y: auto; height: 100%; list-style-type: none; padding-left: 0px; cursor: pointer;"
+          />
+        </div>
         <ul
           class="actionsList"
         >
