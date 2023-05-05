@@ -1,7 +1,7 @@
 import styles from './ToDoList.module.scss';
 import { ToDoItem } from '../ToDoItem/ToDoItem';
 import { ITodoItem } from '../../models/ITodoItem';
-import { BaseSyntheticEvent, useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import { useTodos } from '../../hooks/useTodos';
 import { useToDoRepository } from '../../hooks/useToDoRepository';
 import { useAppSelector } from '../../hooks/useAppSelector';

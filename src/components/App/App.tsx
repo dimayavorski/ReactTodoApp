@@ -12,9 +12,9 @@ function App() {
 	const { add } = useTodos();
 	const { initDatabase } = useToDoRepository();
 
-	// useEffect(() => {
-	// 	initDatabase();
-	// }, [initDatabase]);
+	useEffect(() => {
+		initDatabase();
+	}, [initDatabase]);
 
 	const toggleCheckbox = (value: boolean) => {
 		setIsActive(value);

@@ -15,7 +15,6 @@ export function useTodos() {
 	const dispatch = useAppDispatch();
 
 	function set(todos: ITodoItem[]) {
-		console.log(todos);
 		dispatch(updateToDos(todos));
 	}
 
