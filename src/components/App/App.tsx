@@ -4,7 +4,7 @@ import { ToDoList } from '../ToDoList/ToDoList';
 import { useEffect, useState } from 'react';
 import { useToDoRepository } from '../../hooks/useToDoRepository';
 import { useTodos } from '../../hooks/useTodos';
-import { Checkbox } from '../Checkbox/Checkbox';
+//import { Checkbox } from '../Checkbox/Checkbox';
 
 function App() {
 	const [text, setText] = useState('');
@@ -16,9 +16,9 @@ function App() {
 		initDatabase();
 	}, [initDatabase]);
 
-	const toggleCheckbox = (value: boolean) => {
-		setIsActive(value);
-	};
+	// const toggleCheckbox = (value: boolean) => {
+	// 	setIsActive(value);
+	// };
 	const submitHandler = (event: React.FormEvent) => {
 		event.preventDefault();
 		if (text.trim().length > 0) {
@@ -33,10 +33,10 @@ function App() {
 			<h3 className={styles.title}>TODO App</h3>
 			<form onSubmit={submitHandler}>
 				<div className={styles.inputContainer}>
-					<Checkbox
+					{/* <Checkbox
 						isActive={isActive}
 						toggleCheckboxHandler={toggleCheckbox}
-					/>
+					/> */}
 					<input
 						type="text"
 						className={styles.input}
