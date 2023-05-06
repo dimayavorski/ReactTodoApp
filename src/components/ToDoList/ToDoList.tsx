@@ -22,7 +22,7 @@ export function ToDoList() {
 
 	return (
 		<div className={styles.toDoList}>
-			<div className={styles.content}>
+			<div id="content" className={styles.content}>
 				<Reorder.Group
 					axis="y"
 					values={todos}
@@ -40,7 +40,7 @@ export function ToDoList() {
 					))}
 				</Reorder.Group>
 			</div>
-			<ul className={styles.actionsList}>
+			<ul id="actionsList" className={styles.actionsList}>
 				<li>{todos.filter((todo) => !todo.checked).length} items left</li>
 				<li className={styles.filter}>
 					<span onClick={() => getAll()}>All</span>

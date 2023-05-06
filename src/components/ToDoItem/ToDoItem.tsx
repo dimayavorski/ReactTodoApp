@@ -16,7 +16,11 @@ export const ToDoItem: FC<TodoItemProps> = ({ todoItem }) => {
 	return (
 		<Reorder.Item id={todoItem.id} value={todoItem}>
 			<div className={styles.toDoItem}>
-				<div className={styles.toDoItemInfo}>
+				<div
+					className={
+						todoItem.checked ? styles.toDoItemInfoChecked : styles.toDoItemInfo
+					}
+				>
 					<Checkbox
 						isActive={todoItem.checked}
 						toggleCheckboxHandler={() => toggleComplete(todoItem)}

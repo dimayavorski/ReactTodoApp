@@ -1,21 +1,29 @@
 .toDoItem {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    background-color: white;
-    padding: 5px 15px 5px 15px;
-    gap: 15px;
-    border-bottom: 1px solid gray;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	background-color: white;
+	padding: 5px 15px 5px 15px;
+	gap: 15px;
+	border-bottom: 1px solid gray;
 
-    .toDoItemInfo {
-        display: flex;
+	.toDoItemInfo {
+		display: flex;
+	}
+	.toDoItemInfoChecked {
+		display: flex;
+		text-decoration: line-through;
+		color: gray;
+	}
 
-    }
+	&:hover .removeBtn {
+		display: block;
+	}
 
-    .removeBtn {
-        border: none;
-        background: none;
-        cursor:pointer;
-    }
+	.removeBtn {
+		display: none;
+		border: none;
+		background: none;
+		cursor: pointer;
+	}
 }
-    

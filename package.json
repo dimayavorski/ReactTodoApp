@@ -32,11 +32,13 @@
 		"start": "react-scripts start",
 		"build": "react-scripts build",
 		"test": "react-scripts test",
+		"test:cypress": "start-server-and-test start http://localhost:3000 cypress",
+		"cypress": "cypress run",
 		"eject": "react-scripts eject",
 		"deploy": "gh-pages -d build",
 		"predeploy": "npm run build",
 		"lint": "tsc --noEmit && eslint src/**/*.ts{,x} --cache --max-warnings=0",
-		"lint:fix": "eslint src/**/*.ts{,x} --fix"
+		"lint:fix": "eslint cypress/**/*.ts --fix src/**/*.ts{,x} --fix"
 	},
 	"eslintConfig": {
 		"extends": [
@@ -59,13 +61,16 @@
 	"devDependencies": {
 		"@typescript-eslint/eslint-plugin": "^5.59.2",
 		"@typescript-eslint/parser": "^5.59.2",
+		"cypress": "^12.11.0",
 		"eslint": "^8.39.0",
 		"eslint-config-airbnb": "^19.0.4",
 		"eslint-config-airbnb-base": "^15.0.0",
+		"eslint-plugin-cypress": "^2.13.3",
 		"eslint-plugin-import": "^2.27.5",
 		"eslint-plugin-jsx-a11y": "^6.7.1",
 		"eslint-plugin-react": "^7.32.2",
 		"eslint-plugin-react-hooks": "^4.6.0",
-		"gh-pages": "^5.0.0"
+		"gh-pages": "^5.0.0",
+		"start-server-and-test": "^2.0.0"
 	}
 }

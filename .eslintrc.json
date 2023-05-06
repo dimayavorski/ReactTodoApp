@@ -26,7 +26,7 @@
 		"project": ["./tsconfig.json"]
 	},
 	// Configuring third-party plugins
-	"plugins": ["react", "@typescript-eslint"],
+	"plugins": ["react", "@typescript-eslint", "cypress"],
 	// Resolve imports
 	"settings": {
 		"import/resolver": {
@@ -68,6 +68,6 @@
 		// Enforce the use of the shorthand syntax.
 		"object-shorthand": "error",
 		"no-console": "warn",
-		"import/no-extraneous-dependencies": ["error", {"devDependencies": true}]
+		"import/no-extraneous-dependencies": ["error", { "devDependencies": true }]
 	}
 }

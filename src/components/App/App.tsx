@@ -44,7 +44,7 @@ function App() {
 						value={text}
 						onChange={(e) => setText(e.target.value)}
 					/>
-					<button className={styles.addTodo}>
+					<button type="submit" disabled={!text} className={styles.addTodo}>
 						<AiOutlinePlus size={30} />
 					</button>
 				</div>
