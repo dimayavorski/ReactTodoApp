@@ -12,8 +12,11 @@ export function ToDoList() {
 
 	const { getAll, filterCompleted, filterIncomplete, set, clearCompleted } =
 		useTodos();
-	const { getData } = useToDoRepository();
-
+	const { getData, saveData } = useToDoRepository();
+	const reorderTodos = (reorderedTodos: ITodoItem[]): void => {
+		saveData(reorderedTodos);
+		set(reorderedTodos);
+	};
 	useEffect(() => {
 		const initData = getData();
 		set(initData);
@@ -26,7 +29,7 @@ export function ToDoList() {
 				<Reorder.Group
 					axis="y"
 					values={todos}
-					onReorder={set}
+					onReorder={reorderTodos}
 					style={{
 						overflowY: 'auto',
 						height: '100%',
