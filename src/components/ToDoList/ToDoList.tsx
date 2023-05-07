@@ -25,7 +25,7 @@ export function ToDoList() {
 
 	return (
 		<div className={styles.toDoList}>
-			<div id="content" className={styles.content}>
+			<div className={styles.content} data-testid="content">
 				<Reorder.Group
 					axis="y"
 					values={todos}
@@ -43,15 +43,23 @@ export function ToDoList() {
 					))}
 				</Reorder.Group>
 			</div>
-			<ul id="actionsList" className={styles.actionsList}>
+			<ul className={styles.actionsList}>
 				<li>{todos.filter((todo) => !todo.checked).length} items left</li>
 				<li className={styles.filter}>
-					<span onClick={() => getAll()}>All</span>
-					<span onClick={() => filterIncomplete()}>Active</span>
-					<span onClick={() => filterCompleted()}>Completed</span>
+					<span onClick={() => getAll()} data-testid="getAll">
+						All
+					</span>
+					<span onClick={() => filterIncomplete()} data-testid="getActive">
+						Active
+					</span>
+					<span onClick={() => filterCompleted()} data-testid="getCompleted">
+						Completed
+					</span>
 				</li>
 				<li>
-					<span onClick={() => clearCompleted()}>Clear Completed</span>
+					<span onClick={() => clearCompleted()} data-testid="clearCompleted">
+						Clear Completed
+					</span>
 				</li>
 			</ul>
 		</div>

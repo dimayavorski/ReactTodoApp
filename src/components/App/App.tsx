@@ -32,7 +32,7 @@ function App() {
 		<div className={styles.app}>
 			<h3 className={styles.title}>TODO App</h3>
 			<form onSubmit={submitHandler}>
-				<div className={styles.inputContainer}>
+				<div className={styles.inputContainer} data-testid="inputContainer">
 					<Checkbox
 						isActive={isActive}
 						toggleCheckboxHandler={toggleCheckbox}

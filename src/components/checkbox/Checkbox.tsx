@@ -10,7 +10,7 @@ export const Checkbox: FC<ICheckboxProps> = ({
 	isActive,
 }) => {
 	return (
-		<div className={styles.checkBoxContainer}>
+		<div className={styles.checkBoxContainer} data-testid="checkBoxContainer">
 			<label>
 				<input
 					type="checkbox"
