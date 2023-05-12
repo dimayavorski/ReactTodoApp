@@ -3,19 +3,6 @@ import { ITodoItem } from '../models/ITodoItem';
 export function useToDoRepository() {
 	const key = 'todos';
 
-	const todosMock: ITodoItem[] = [
-		{
-			id: new Date().toISOString(),
-			text: '12321412',
-			checked: false,
-		},
-		{
-			id: new Date().toISOString() + '1',
-			text: '1asdasdasd',
-			checked: false,
-		},
-	];
-
 	function saveData(todos: ITodoItem[]) {
 		localStorage.setItem(key, JSON.stringify(todos));
 	}
@@ -71,13 +58,7 @@ export function useToDoRepository() {
 		return data;
 	}
 
-	function initDatabase() {
-		if (!localStorage.getItem(key))
-			localStorage.setItem(key, JSON.stringify(todosMock));
-	}
-
 	return {
-		initDatabase,
 		removeCompleted,
 		saveData,
 		getData,

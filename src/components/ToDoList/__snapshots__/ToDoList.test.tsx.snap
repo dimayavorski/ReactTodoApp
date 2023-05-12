@@ -8,200 +8,31 @@ Object {
       <div
         class="toDoList"
       >
-        <div
+        <ul
           class="content"
-        >
-          <ul
-            style="overflow-y: auto; height: 100%; list-style-type: none; padding-left: 0px; cursor: pointer;"
-          >
-            <li
-              draggable="false"
-              id="asdasd"
-              style="z-index: unset; transform: none; user-select: none;"
-            >
-              <div
-                class="toDoItem"
-              >
-                <div
-                  class="toDoItemInfo"
-                >
-                  <div
-                    class="checkBoxContainer"
-                  >
-                    <label>
-                      <input
-                        checked=""
-                        type="checkbox"
-                      />
-                      <span />
-                    </label>
-                  </div>
-                  <p>
-                    someName
-                  </p>
-                </div>
-                <button
-                  class="removeBtn"
-                >
-                  <svg
-                    fill="currentColor"
-                    height="20"
-                    stroke="currentColor"
-                    stroke-width="0"
-                    viewBox="0 0 1024 1024"
-                    width="20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 0 0 203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </li>
-            <li
-              draggable="false"
-              id="asdasd2"
-              style="z-index: unset; transform: none; user-select: none;"
-            >
-              <div
-                class="toDoItem"
-              >
-                <div
-                  class="toDoItemInfo"
-                >
-                  <div
-                    class="checkBoxContainer"
-                  >
-                    <label>
-                      <input
-                        checked=""
-                        type="checkbox"
-                      />
-                      <span />
-                    </label>
-                  </div>
-                  <p>
-                    someName2
-                  </p>
-                </div>
-                <button
-                  class="removeBtn"
-                >
-                  <svg
-                    fill="currentColor"
-                    height="20"
-                    stroke="currentColor"
-                    stroke-width="0"
-                    viewBox="0 0 1024 1024"
-                    width="20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 0 0 203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </li>
-            <li
-              draggable="false"
-              id="asdasd3"
-              style="z-index: unset; transform: none; user-select: none;"
-            >
-              <div
-                class="toDoItem"
-              >
-                <div
-                  class="toDoItemInfo"
-                >
-                  <div
-                    class="checkBoxContainer"
-                  >
-                    <label>
-                      <input
-                        type="checkbox"
-                      />
-                      <span />
-                    </label>
-                  </div>
-                  <p>
-                    someName3
-                  </p>
-                </div>
-                <button
-                  class="removeBtn"
-                >
-                  <svg
-                    fill="currentColor"
-                    height="20"
-                    stroke="currentColor"
-                    stroke-width="0"
-                    viewBox="0 0 1024 1024"
-                    width="20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 0 0 203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <ul
-          class="actionsList"
-        >
-          <li>
-            1
-             items left
-          </li>
-          <li
-            class="filter"
-          >
-            <span>
-              All
-            </span>
-            <span>
-              Active
-            </span>
-            <span>
-              Completed
-            </span>
-          </li>
-          <li>
-            <span>
-              Clear Completed
-            </span>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </body>,
-  "container": <div>
-    <div
-      class="toDoList"
-    >
-      <div
-        class="content"
-      >
-        <ul
-          style="overflow-y: auto; height: 100%; list-style-type: none; padding-left: 0px; cursor: pointer;"
+          data-rbd-droppable-context-id="0"
+          data-rbd-droppable-id="todos"
+          data-testid="content"
         >
           <li
+            aria-describedby="rbd-hidden-text-0-hidden-text-0"
+            data-rbd-drag-handle-context-id="0"
+            data-rbd-drag-handle-draggable-id="asdasd"
+            data-rbd-draggable-context-id="0"
+            data-rbd-draggable-id="asdasd"
             draggable="false"
-            id="asdasd"
-            style="z-index: unset; transform: none; user-select: none;"
+            role="button"
+            tabindex="0"
           >
             <div
               class="toDoItem"
             >
               <div
-                class="toDoItemInfo"
+                class="toDoItemInfoChecked"
               >
                 <div
                   class="checkBoxContainer"
+                  data-testid="checkBoxContainer"
                 >
                   <label>
                     <input
@@ -235,18 +66,24 @@ Object {
             </div>
           </li>
           <li
+            aria-describedby="rbd-hidden-text-0-hidden-text-0"
+            data-rbd-drag-handle-context-id="0"
+            data-rbd-drag-handle-draggable-id="asdasd2"
+            data-rbd-draggable-context-id="0"
+            data-rbd-draggable-id="asdasd2"
             draggable="false"
-            id="asdasd2"
-            style="z-index: unset; transform: none; user-select: none;"
+            role="button"
+            tabindex="0"
           >
             <div
               class="toDoItem"
             >
               <div
-                class="toDoItemInfo"
+                class="toDoItemInfoChecked"
               >
                 <div
                   class="checkBoxContainer"
+                  data-testid="checkBoxContainer"
                 >
                   <label>
                     <input
@@ -280,9 +117,14 @@ Object {
             </div>
           </li>
           <li
+            aria-describedby="rbd-hidden-text-0-hidden-text-0"
+            data-rbd-drag-handle-context-id="0"
+            data-rbd-drag-handle-draggable-id="asdasd3"
+            data-rbd-draggable-context-id="0"
+            data-rbd-draggable-id="asdasd3"
             draggable="false"
-            id="asdasd3"
-            style="z-index: unset; transform: none; user-select: none;"
+            role="button"
+            tabindex="0"
           >
             <div
               class="toDoItem"
@@ -292,6 +134,7 @@ Object {
               >
                 <div
                   class="checkBoxContainer"
+                  data-testid="checkBoxContainer"
                 >
                   <label>
                     <input
@@ -324,7 +167,226 @@ Object {
             </div>
           </li>
         </ul>
+        <ul
+          class="actionsList"
+        >
+          <li>
+            1
+             items left
+          </li>
+          <li
+            class="filter"
+          >
+            <span
+              class="footerButton active"
+              data-testid="getAll"
+            >
+              All
+            </span>
+            <span
+              class="footerButton"
+              data-testid="getActive"
+            >
+              Active
+            </span>
+            <span
+              class="footerButton"
+              data-testid="getCompleted"
+            >
+              Completed
+            </span>
+          </li>
+          <li>
+            <span
+              class="footerButton"
+              data-testid="clearCompleted"
+            >
+              Clear Completed
+            </span>
+          </li>
+        </ul>
       </div>
+    </div>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      id="rbd-announcement-0"
+      style="position: absolute; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip-path: inset(100%);"
+    />
+    <div
+      id="rbd-hidden-text-0-hidden-text-0"
+      style="display: none;"
+    >
+      
+  Press space bar to start a drag.
+  When dragging you can use the arrow keys to move the item around and escape to cancel.
+  Some screen readers may require you to be in focus mode or to use your pass through key
+
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="toDoList"
+    >
+      <ul
+        class="content"
+        data-rbd-droppable-context-id="0"
+        data-rbd-droppable-id="todos"
+        data-testid="content"
+      >
+        <li
+          aria-describedby="rbd-hidden-text-0-hidden-text-0"
+          data-rbd-drag-handle-context-id="0"
+          data-rbd-drag-handle-draggable-id="asdasd"
+          data-rbd-draggable-context-id="0"
+          data-rbd-draggable-id="asdasd"
+          draggable="false"
+          role="button"
+          tabindex="0"
+        >
+          <div
+            class="toDoItem"
+          >
+            <div
+              class="toDoItemInfoChecked"
+            >
+              <div
+                class="checkBoxContainer"
+                data-testid="checkBoxContainer"
+              >
+                <label>
+                  <input
+                    checked=""
+                    type="checkbox"
+                  />
+                  <span />
+                </label>
+              </div>
+              <p>
+                someName
+              </p>
+            </div>
+            <button
+              class="removeBtn"
+            >
+              <svg
+                fill="currentColor"
+                height="20"
+                stroke="currentColor"
+                stroke-width="0"
+                viewBox="0 0 1024 1024"
+                width="20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 0 0 203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"
+                />
+              </svg>
+            </button>
+          </div>
+        </li>
+        <li
+          aria-describedby="rbd-hidden-text-0-hidden-text-0"
+          data-rbd-drag-handle-context-id="0"
+          data-rbd-drag-handle-draggable-id="asdasd2"
+          data-rbd-draggable-context-id="0"
+          data-rbd-draggable-id="asdasd2"
+          draggable="false"
+          role="button"
+          tabindex="0"
+        >
+          <div
+            class="toDoItem"
+          >
+            <div
+              class="toDoItemInfoChecked"
+            >
+              <div
+                class="checkBoxContainer"
+                data-testid="checkBoxContainer"
+              >
+                <label>
+                  <input
+                    checked=""
+                    type="checkbox"
+                  />
+                  <span />
+                </label>
+              </div>
+              <p>
+                someName2
+              </p>
+            </div>
+            <button
+              class="removeBtn"
+            >
+              <svg
+                fill="currentColor"
+                height="20"
+                stroke="currentColor"
+                stroke-width="0"
+                viewBox="0 0 1024 1024"
+                width="20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 0 0 203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"
+                />
+              </svg>
+            </button>
+          </div>
+        </li>
+        <li
+          aria-describedby="rbd-hidden-text-0-hidden-text-0"
+          data-rbd-drag-handle-context-id="0"
+          data-rbd-drag-handle-draggable-id="asdasd3"
+          data-rbd-draggable-context-id="0"
+          data-rbd-draggable-id="asdasd3"
+          draggable="false"
+          role="button"
+          tabindex="0"
+        >
+          <div
+            class="toDoItem"
+          >
+            <div
+              class="toDoItemInfo"
+            >
+              <div
+                class="checkBoxContainer"
+                data-testid="checkBoxContainer"
+              >
+                <label>
+                  <input
+                    type="checkbox"
+                  />
+                  <span />
+                </label>
+              </div>
+              <p>
+                someName3
+              </p>
+            </div>
+            <button
+              class="removeBtn"
+            >
+              <svg
+                fill="currentColor"
+                height="20"
+                stroke="currentColor"
+                stroke-width="0"
+                viewBox="0 0 1024 1024"
+                width="20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 0 0 203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"
+                />
+              </svg>
+            </button>
+          </div>
+        </li>
+      </ul>
       <ul
         class="actionsList"
       >
@@ -335,18 +397,30 @@ Object {
         <li
           class="filter"
         >
-          <span>
+          <span
+            class="footerButton active"
+            data-testid="getAll"
+          >
             All
           </span>
-          <span>
+          <span
+            class="footerButton"
+            data-testid="getActive"
+          >
             Active
           </span>
-          <span>
+          <span
+            class="footerButton"
+            data-testid="getCompleted"
+          >
             Completed
           </span>
         </li>
         <li>
-          <span>
+          <span
+            class="footerButton"
+            data-testid="clearCompleted"
+          >
             Clear Completed
           </span>
         </li>

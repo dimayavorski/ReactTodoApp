@@ -6,26 +6,11 @@
 	padding-bottom: 1px;
 
 	.content {
-		padding: 0;
+		padding: 5px;
 		height: 400px;
+		list-style-type: none;
 
 		.draggable {
-			cursor: pointer;
-		}
-	}
-
-	.actionsList {
-		margin: 0;
-		padding: 20px 15px 10px 15px;
-		display: flex;
-		justify-content: space-between;
-		list-style-type: none;
-		.filter {
-			display: flex;
-			gap: 15px;
-		}
-
-		li {
 			cursor: pointer;
 		}
 	}

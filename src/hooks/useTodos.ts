@@ -1,7 +1,9 @@
 import { ITodoItem } from '../models/ITodoItem';
 import { useAppDispatch } from './useAppDispatch';
-import { addToDo, removeToDo, updateToDos } from '../store/todoSlice';
+import { removeToDo, updateToDos } from '../store/todoSlice';
 import { useToDoRepository } from './useToDoRepository';
+import { useAppSelector } from './useAppSelector';
+import { FilterType } from '../models/FilterType';
 
 export function useTodos() {
 	const {
@@ -14,10 +16,10 @@ export function useTodos() {
 	} = useToDoRepository();
 	const dispatch = useAppDispatch();
 
+	const filter = useAppSelector((state) => state.todos.filter);
 	function set(todos: ITodoItem[]) {
 		dispatch(updateToDos(todos));
 	}
-
 	function getAll() {
 		const todos = getData();
 		set(todos);
@@ -32,6 +34,15 @@ export function useTodos() {
 		const todos = getIncompleteData();
 		set(todos);
 	}
+	function setFiltered() {
+		if (filter == FilterType.COMPLETED) {
+			filterCompleted();
+		} else if (filter == FilterType.INCOMPLETE) {
+			filterIncomplete();
+		} else {
+			getAll();
+		}
+	}
 
 	function add(text: string, isActive: boolean) {
 		const data = getData();
@@ -42,12 +53,12 @@ export function useTodos() {
 		};
 		data.push(todo);
 		saveData(data);
-		dispatch(addToDo(todo));
+		setFiltered();
 	}
 
 	function toggleComplete(todo: ITodoItem) {
-		const todos = toggleTodo(todo);
-		set(todos);
+		toggleTodo(todo);
+		setFiltered();
 	}
 
 	function remove(todo: ITodoItem) {
@@ -71,5 +82,6 @@ export function useTodos() {
 		add,
 		remove,
 		toggleComplete,
+		setFiltered,
 	};
 }

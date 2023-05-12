@@ -3,9 +3,7 @@ import { useToDoRepository } from './useToDoRepository';
 
 describe('useToDoRepository tests', () => {
 	const {
-		initDatabase,
 		saveData,
-		getData,
 		getCompletedData,
 		getIncompleteData,
 		toggleTodo,
@@ -37,20 +35,6 @@ describe('useToDoRepository tests', () => {
 	};
 	beforeEach(() => {
 		localStorage.removeItem('todos');
-	});
-
-	it('initDatabase repository should set some data', () => {
-		initDatabase();
-		const data = getData();
-
-		expect(data.length).toBeGreaterThan(0);
-	});
-
-	it('getData should return data', () => {
-		initDatabase();
-		const data = getData();
-
-		expect(data).toBeTruthy();
 	});
 
 	it('getIncomplete data should return not checked items', () => {

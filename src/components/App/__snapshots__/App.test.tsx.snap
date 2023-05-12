@@ -16,9 +16,11 @@ Object {
         <form>
           <div
             class="inputContainer"
+            data-testid="inputContainer"
           >
             <div
               class="checkBoxContainer"
+              data-testid="checkBoxContainer"
             >
               <label>
                 <input
@@ -35,6 +37,8 @@ Object {
             />
             <button
               class="addTodo"
+              disabled=""
+              type="submit"
             >
               <svg
                 fill="currentColor"
@@ -61,13 +65,12 @@ Object {
         <div
           class="toDoList"
         >
-          <div
+          <ul
             class="content"
-          >
-            <ul
-              style="overflow-y: auto; height: 100%; list-style-type: none; padding-left: 0px; cursor: pointer;"
-            />
-          </div>
+            data-rbd-droppable-context-id="0"
+            data-rbd-droppable-id="todos"
+            data-testid="content"
+          />
           <ul
             class="actionsList"
           >
@@ -78,24 +81,52 @@ Object {
             <li
               class="filter"
             >
-              <span>
+              <span
+                class="footerButton active"
+                data-testid="getAll"
+              >
                 All
               </span>
-              <span>
+              <span
+                class="footerButton"
+                data-testid="getActive"
+              >
                 Active
               </span>
-              <span>
+              <span
+                class="footerButton"
+                data-testid="getCompleted"
+              >
                 Completed
               </span>
             </li>
             <li>
-              <span>
+              <span
+                class="footerButton"
+                data-testid="clearCompleted"
+              >
                 Clear Completed
               </span>
             </li>
           </ul>
         </div>
       </div>
+    </div>
+    <div
+      aria-atomic="true"
+      aria-live="assertive"
+      id="rbd-announcement-0"
+      style="position: absolute; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip-path: inset(100%);"
+    />
+    <div
+      id="rbd-hidden-text-0-hidden-text-0"
+      style="display: none;"
+    >
+      
+  Press space bar to start a drag.
+  When dragging you can use the arrow keys to move the item around and escape to cancel.
+  Some screen readers may require you to be in focus mode or to use your pass through key
+
     </div>
   </body>,
   "container": <div>
@@ -110,9 +141,11 @@ Object {
       <form>
         <div
           class="inputContainer"
+          data-testid="inputContainer"
         >
           <div
             class="checkBoxContainer"
+            data-testid="checkBoxContainer"
           >
             <label>
               <input
@@ -129,6 +162,8 @@ Object {
           />
           <button
             class="addTodo"
+            disabled=""
+            type="submit"
           >
             <svg
               fill="currentColor"
@@ -155,13 +190,12 @@ Object {
       <div
         class="toDoList"
       >
-        <div
+        <ul
           class="content"
-        >
-          <ul
-            style="overflow-y: auto; height: 100%; list-style-type: none; padding-left: 0px; cursor: pointer;"
-          />
-        </div>
+          data-rbd-droppable-context-id="0"
+          data-rbd-droppable-id="todos"
+          data-testid="content"
+        />
         <ul
           class="actionsList"
         >
@@ -172,18 +206,30 @@ Object {
           <li
             class="filter"
           >
-            <span>
+            <span
+              class="footerButton active"
+              data-testid="getAll"
+            >
               All
             </span>
-            <span>
+            <span
+              class="footerButton"
+              data-testid="getActive"
+            >
               Active
             </span>
-            <span>
+            <span
+              class="footerButton"
+              data-testid="getCompleted"
+            >
               Completed
             </span>
           </li>
           <li>
-            <span>
+            <span
+              class="footerButton"
+              data-testid="clearCompleted"
+            >
               Clear Completed
             </span>
           </li>

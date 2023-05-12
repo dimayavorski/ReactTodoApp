@@ -1,0 +1,9 @@
+.footerButton {
+	&:hover {
+		text-decoration: underline;
+		cursor: pointer;
+	}
+}
+.active {
+	text-decoration: underline;
+}

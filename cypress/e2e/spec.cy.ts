@@ -12,7 +12,10 @@ describe('App E2E', () => {
 		cy.get('input[type="text"]').type('Some todo 1');
 		cy.get('button[type=submit]').click();
 
-		cy.get('li:last-child p').should('have.text', 'Some todo 1');
+		cy.get('ul[data-testid="content"] li:last-child p').should(
+			'have.text',
+			'Some todo 1'
+		);
 	});
 
 	it('should have add button disabled if text empty', () => {
@@ -25,22 +28,24 @@ describe('App E2E', () => {
 		cy.get('input[type="text"]').type('Some todo 2');
 		cy.get('button[type=submit]').click();
 
-		cy.get('div[data-testid="content"] li').should('have.length', 3);
+		cy.get('ul[data-testid="content"] li').should('have.length', 1);
 
-		cy.get('div[data-testid="content"] li:last-child button')
+		cy.get('ul[data-testid="content"] li:last-child button')
 			.invoke('show')
 			.click();
-		cy.get('div[data-testid="content"] li').should('have.length', 2);
+		cy.get('ul[data-testid="content"] li').should('have.length', 0);
 	});
 
 	it('should show all item when click All', () => {
-		cy.get('div[data-testid="content"]')
+		cy.get('input[type="text"]').type('Some todo 2');
+		cy.get('button[type=submit]').click();
+		cy.get('ul[data-testid="content"]')
 			.find('li')
 			.then((li) => {
 				const liCount: number = Cypress.$(li).length;
 				cy.get('span[data-testid="getAll"]').click();
 
-				cy.get('div[data-testid="content"]')
+				cy.get('ul[data-testid="content"]')
 					.find('li')
 					.its('length')
 					.should('eq', liCount);
@@ -54,17 +59,11 @@ describe('App E2E', () => {
 			.click();
 		cy.get('button[type=submit]').click();
 
-		cy.get('div[data-testid="content"]')
-			.find('li')
-			.then((li) => {
-				const liCount: number = Cypress.$(li).length;
-				cy.get('span[data-testid="getActive"]').click();
+		cy.get('span[data-testid="getActive"]').click();
 
-				cy.get('div[data-testid="content"]')
-					.find('li')
-					.its('length')
-					.should('eq', liCount - 1);
-			});
+		cy.get('ul[data-testid="content"]').within(() => {
+			cy.get('li').should('not.exist');
+		});
 	});
 
 	it('should show all completed items when click Completed', () => {
@@ -75,7 +74,7 @@ describe('App E2E', () => {
 		cy.get('button[type=submit]').click();
 
 		cy.get('span[data-testid="getCompleted"]').click();
-		cy.get('div[data-testid="content"]').find('li').should('have.length', 1);
+		cy.get('ul[data-testid="content"]').find('li').should('have.length', 1);
 	});
 
 	it('clear completed should remove', () => {
@@ -85,16 +84,8 @@ describe('App E2E', () => {
 			.click();
 		cy.get('button[type=submit]').click();
 
-		cy.get('div[data-testid="content"]')
-			.find('li')
-			.then((li) => {
-				const liCount: number = Cypress.$(li).length;
+		cy.get('span[data-testid="clearCompleted"').click();
 
-				cy.get('span[data-testid="clearCompleted"').click();
-				cy.get('div[data-testid="content"]')
-					.find('li')
-					.its('length')
-					.should('eq', liCount - 1);
-			});
+		cy.get('ul[data-testid="content"]').find('li').should('not.exist');
 	});
 });

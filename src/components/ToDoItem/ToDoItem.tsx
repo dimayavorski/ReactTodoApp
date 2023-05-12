@@ -4,7 +4,6 @@ import { FC } from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
 import { Checkbox } from '../Checkbox/Checkbox';
 import { useTodos } from '../../hooks/useTodos';
-import { Reorder } from 'framer-motion';
 
 interface TodoItemProps {
 	todoItem: ITodoItem;
@@ -14,23 +13,21 @@ export const ToDoItem: FC<TodoItemProps> = ({ todoItem }) => {
 	const { remove, toggleComplete } = useTodos();
 
 	return (
-		<Reorder.Item id={todoItem.id} value={todoItem}>
-			<div className={styles.toDoItem}>
-				<div
-					className={
-						todoItem.checked ? styles.toDoItemInfoChecked : styles.toDoItemInfo
-					}
-				>
-					<Checkbox
-						isActive={todoItem.checked}
-						toggleCheckboxHandler={() => toggleComplete(todoItem)}
-					/>
-					<p>{todoItem.text}</p>
-				</div>
-				<button className={styles.removeBtn} onClick={() => remove(todoItem)}>
-					<AiOutlineClose size={20} />
-				</button>
+		<div className={styles.toDoItem}>
+			<div
+				className={
+					todoItem.checked ? styles.toDoItemInfoChecked : styles.toDoItemInfo
+				}
+			>
+				<Checkbox
+					isActive={todoItem.checked}
+					toggleCheckboxHandler={() => toggleComplete(todoItem)}
+				/>
+				<p>{todoItem.text}</p>
 			</div>
-		</Reorder.Item>
+			<button className={styles.removeBtn} onClick={() => remove(todoItem)}>
+				<AiOutlineClose size={20} />
+			</button>
+		</div>
 	);
 };
