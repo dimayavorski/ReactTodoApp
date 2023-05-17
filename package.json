@@ -12,6 +12,7 @@
 		"@types/node": "^16.18.25",
 		"@types/react": "^18.2.0",
 		"@types/react-dom": "^18.2.1",
+		"antd": "^5.5.0",
 		"eslint-config-airbnb-typescript": "^17.0.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-import-resolver-typescript": "^3.5.1",
